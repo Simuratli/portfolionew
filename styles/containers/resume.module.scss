@@ -1,0 +1,20 @@
+.resume {
+  margin:40px 0;
+}
+
+.resumeHead {
+  border-bottom: 1px solid #E1E1E1;
+}
+
+.resumeListItem{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.resumeListItem__name{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

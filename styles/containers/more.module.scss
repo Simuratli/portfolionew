@@ -1,0 +1,39 @@
+.more {
+  margin-top: 40px;
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 15px;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  &__card {
+    width: 310px;
+    height: 200px;
+    position: relative;
+    border: 1px solid rgba(143, 142, 138, 0.3);
+    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.09));
+    border-radius: 3px;
+    cursor: pointer;
+    
+
+    &__footer {
+      padding: 10px;
+    }
+
+    &__image {
+      position: relative;
+      height: 150px;
+      width: 310px;
+      background-color: #C4C4C4;
+
+      img {
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+}

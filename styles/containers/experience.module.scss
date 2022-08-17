@@ -1,0 +1,24 @@
+.experience {
+  margin-top: 50px;
+
+  &__card {
+    margin: 20px 0;
+
+    &__job {
+      font-family: 'Inter';
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      margin: 5px 0;
+    }
+
+    &__duty {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+}

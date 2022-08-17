@@ -1,0 +1,20 @@
+.heading {
+  font-style: normal;
+  font-weight: 700;
+  color: #373530;
+
+  &.big{
+    font-size: 48px;
+    line-height: 58px;
+  }
+
+  &.middle{
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  &.small{
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
