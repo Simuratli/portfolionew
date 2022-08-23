@@ -1,8 +1,12 @@
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect } from "react";
+import { RootState } from '../redux/store';
+import { useSelector, useDispatch } from 'react-redux';
+import { audioReducerType, setPlay } from '../redux/reducers/audio';
 
 export const useAudioPlayer = () => {
-
-  const [isPlaying, setIsPlaying] = useState(false)
+  const musicPlayer = useSelector<RootState, audioReducerType>((state) => state.player);
+  const dispatch = useDispatch();
+  // const [isPlaying, setIsPlaying] = useState(false)
   const [duration, setDuration] = useState(0)
   const [currentTime, setCurrentTime] = useState(0)
 
@@ -23,14 +27,16 @@ export const useAudioPlayer = () => {
 
 
   const togglePlay = () => {
-    const prevData = isPlaying
-    setIsPlaying(!prevData)
+    const prevData = musicPlayer.isPlaying
+    dispatch(setPlay(!prevData))
 
     if (!prevData) {
+      console.log('AudioControlsPropTypes is undefined  for audio player.')
       audioRef.current.play();
       animationRef.current = requestAnimationFrame(whilePlaying)
     } else {
       audioRef.current.pause()
+      console.log('AudioControlsPropTypes is undefined  for audio player. 22')
       cancelAnimationFrame(animationRef.current)
     }
   }
@@ -82,7 +88,6 @@ export const useAudioPlayer = () => {
 
 
   return {
-    isPlaying,
     duration,
     currentTime,
     audioRef,

@@ -1,6 +1,8 @@
 import '../styles/globals.scss'
 import React from 'react';
-import { HeaderImage, Avatar } from '../components'
+import { HeaderImage, Avatar } from '../components';
+import { store } from '../redux/store';
+import { Provider } from 'react-redux';
 
 interface AppPropTypes {
   Component: React.ElementType,
@@ -8,12 +10,14 @@ interface AppPropTypes {
 }
 
 function MyApp({ Component, pageProps }: AppPropTypes) {
-  return <div className='main-container'>
-    <HeaderImage />
-    <div className="component-container">
-      <Component {...pageProps} />
+  return <Provider store={store}>
+    <div className='main-container'>
+      <HeaderImage />
+      <div className="component-container">
+        <Component {...pageProps} />
+      </div>
     </div>
-  </div>
+  </Provider>
 }
 
 export default MyApp
