@@ -27,10 +27,10 @@ function MusicCard({ image, singer, name, music }: MusicCardPropTypes) {
   }
 
   return (
-    <div className={classes.musicCard}>
+    <div onClick={onClickPlay} className={classes.musicCard}>
       <div className={classes.musicCard__image}>
         <button className={classes.musicCard__icon}>
-          <AiOutlinePlayCircle onClick={onClickPlay} />
+          <AiOutlinePlayCircle />
         </button>
         <Image layout='fill' alt={singer} src={image} />
       </div>
