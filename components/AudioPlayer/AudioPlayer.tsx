@@ -28,7 +28,7 @@ function AudioPlayer() {
     <div className={classes.audioPlayer}>
       <div className={classes.audioPlayer__content}>
         <audio preload="metadata" onLoadedMetadata={onLoadedMetadata} ref={audioRef} src={musicPlayer.music}></audio>
-        <div>
+        <div className={classes.audioPlayer__main}>
           <Heading type="small"><>{musicPlayer.name}</></Heading>
           <br />
           <div className={classes.audioPlayer__progress}>
