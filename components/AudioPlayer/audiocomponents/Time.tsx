@@ -6,7 +6,7 @@ function Time({ currentTime, duration, calculateTime }: TimeComponentPropTypes) 
   return (
     <div className={classes.audioPlayer__time}>
       <div className={classes.currentTime}>{calculateTime(currentTime)}</div>
-      <div className={classes.duration}>{duration && !isNaN(duration) && calculateTime(duration)}</div>
+      <div className={classes.duration}>{duration && !isNaN(duration) ? calculateTime(duration) : "00:00"}</div>
     </div>
   )
 }

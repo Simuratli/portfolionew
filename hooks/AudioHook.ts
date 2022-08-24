@@ -29,7 +29,6 @@ export const useAudioPlayer = () => {
   const togglePlay = () => {
     const prevData = musicPlayer.isPlaying
     dispatch(setPlay(!prevData))
-
     if (!prevData) {
       console.log('AudioControlsPropTypes is undefined  for audio player.')
       audioRef.current.play();
@@ -80,11 +79,32 @@ export const useAudioPlayer = () => {
 
 
   useEffect(() => {
-    const seconds = Math.floor(audioRef.current.duration)
+    if (musicPlayer.isPlaying) {
+      console.log(audioRef.current.loadedmetadata, 'audioRef.current pp')
+      audioRef.current.play();
+      animationRef.current = requestAnimationFrame(whilePlaying)
+    } else {
+      audioRef.current.pause()
+      console.log('AudioControlsPropTypes is undefined  for audio player. 22')
+      cancelAnimationFrame(animationRef.current)
+    }
+
+  }, [musicPlayer.isPlaying, whilePlaying])
+
+
+  // useEffect(() => {
+  //   const seconds = Math.floor(audioRef.current.duration)
+  //   progressBarRef.current.max = seconds;
+  //   setDuration(seconds)
+  // }, [audioRef?.current?.loadedmetadata, audioRef?.current?.readyState])
+
+  const onLoadedMetadata = (event: any) => {
+    console.log(event.target.duration, 'event.target.duration')
+    console.log(audioRef.current.duration, 'event.target.duration audioRef.current.duration')
+    const seconds = Math.floor(audioRef.current.duration);
     progressBarRef.current.max = seconds;
     setDuration(seconds)
-  }, [audioRef?.current?.loadedmetadata, audioRef?.current?.readyState])
-
+  }
 
 
   return {
@@ -95,6 +115,7 @@ export const useAudioPlayer = () => {
     calculateTime,
     togglePlay,
     timeTravel,
-    changeRange
+    changeRange,
+    onLoadedMetadata
   }
 }

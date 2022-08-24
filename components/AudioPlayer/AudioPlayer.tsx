@@ -17,7 +17,8 @@ function AudioPlayer() {
     progressBarRef,
     calculateTime,
     togglePlay,
-    changeRange
+    changeRange,
+    onLoadedMetadata
   } = useAudioPlayer()
 
   const musicPlayer = useSelector<RootState, audioReducerType>((state) => state.player);
@@ -26,7 +27,7 @@ function AudioPlayer() {
   return (
     <div className={classes.audioPlayer}>
       <div className={classes.audioPlayer__content}>
-        <audio ref={audioRef} src={musicPlayer.music}></audio>
+        <audio preload="metadata" onLoadedMetadata={onLoadedMetadata} ref={audioRef} src={musicPlayer.music}></audio>
         <div>
           <Heading type="small"><>{musicPlayer.name}</></Heading>
           <br />

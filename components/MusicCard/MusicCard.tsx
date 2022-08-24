@@ -3,7 +3,7 @@ import Image from 'next/image';
 import classes from '../../styles/components/musiccard.module.scss';
 import { MusicCardPropTypes } from './MusicCard.types';
 import { AiOutlinePlayCircle, AiOutlinePauseCircle } from 'react-icons/ai';
-import { setPlayerMusic } from '../../redux/reducers/audio';
+import { setPlayerMusic, setPlay } from '../../redux/reducers/audio';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../redux/store';
 
@@ -19,10 +19,16 @@ function MusicCard({ image, singer, name }: MusicCardPropTypes) {
 
   const onClickPlay = () => {
     dispatch(setPlayerMusic({
-      isPlaying: true,
-      name: "I like to move it",
+      isPlaying: false,
+      name: "Dangerous",
       music: "https://github.com/Simuratli/portfolionew/blob/main/public/music/%5BLYRICS%5D%20'Best%20Friend'%20-%20Saweetie%20(feat.%20Doja%20Cat,%20Jamie%20&%20CHANMINA)%20__%20Color%20Coded%20Lyrics.mp3?raw=true"
     }))
+
+
+    setTimeout(() => {
+      dispatch(setPlay(true))
+    }, 200);
+
   }
 
   return (
