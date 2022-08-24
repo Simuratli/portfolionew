@@ -21,7 +21,7 @@ function MusicCard({ image, singer, name }: MusicCardPropTypes) {
     dispatch(setPlayerMusic({
       isPlaying: true,
       name: "I like to move it",
-      music: "https://github.com/Simuratli/portfolionew/blob/eba14f218cfc898ffcad147af50fbf3286ebab12/public/music/%5BAMV%5D%20SUPER%20RISER!%20%E3%80%8CDo%20You%20Remember%20Love.mp3?raw=true"
+      music: "https://github.com/Simuratli/portfolionew/blob/main/public/music/%5BLYRICS%5D%20'Best%20Friend'%20-%20Saweetie%20(feat.%20Doja%20Cat,%20Jamie%20&%20CHANMINA)%20__%20Color%20Coded%20Lyrics.mp3?raw=true"
     }))
   }
 

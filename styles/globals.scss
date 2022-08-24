@@ -21,3 +21,10 @@
 .italic{
   font-style: italic;
 }
+
+@media (max-width: 768px) {
+  .component-container {
+    width: 100%;
+    padding: 20px;
+  }
+}
