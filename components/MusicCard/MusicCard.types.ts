@@ -1,5 +1,6 @@
 export interface MusicCardPropTypes {
   image: string;
   singer: string;
-  name: string
+  name: string,
+  music: string;
 }

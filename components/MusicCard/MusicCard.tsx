@@ -7,21 +7,16 @@ import { setPlayerMusic, setPlay } from '../../redux/reducers/audio';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../redux/store';
 
-function MusicCard({ image, singer, name }: MusicCardPropTypes) {
+function MusicCard({ image, singer, name, music }: MusicCardPropTypes) {
   const dispatch = useDispatch();
   const musicPlayer = useSelector<RootState>((state) => state.player);
-
-
-  useEffect(() => {
-    console.log(musicPlayer, 'musicPlayer')
-  }, [musicPlayer])
 
 
   const onClickPlay = () => {
     dispatch(setPlayerMusic({
       isPlaying: false,
-      name: "Dangerous",
-      music: "https://github.com/Simuratli/portfolionew/blob/main/public/music/%5BLYRICS%5D%20'Best%20Friend'%20-%20Saweetie%20(feat.%20Doja%20Cat,%20Jamie%20&%20CHANMINA)%20__%20Color%20Coded%20Lyrics.mp3?raw=true"
+      name: `${name} - ${singer}`,
+      music: music
     }))
 
 
