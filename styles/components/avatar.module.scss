@@ -7,3 +7,16 @@
   background-color: white;
   margin-bottom: 55px;
 }
+
+@media (max-width: 768px){
+  .avatar{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    background-color: white;
+    margin-bottom: 55px;
+  }
+  
+}
