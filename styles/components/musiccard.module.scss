@@ -1,3 +1,5 @@
+@import '../global/colors.scss';
+
 .musicCard {
   height: 80px;
   display: flex;
@@ -5,7 +7,7 @@
   border: 1px solid #E1E1E1;
   cursor: pointer;
   margin: 20px 0;
-
+  position: relative;
 
   &__icon {
     color: #F0F0F0;
@@ -61,6 +63,18 @@
     color: #37352F;
   }
 
+}
+
+
+.musicCard__active__dot {
+  display: block;
+  background-color: $activeGreen;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  position: absolute;
+  right: 20px;
+  top: 30px
 }
 
 

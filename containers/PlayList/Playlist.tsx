@@ -1,11 +1,9 @@
 import React from 'react';
 import { MusicCard } from '../../components';
-import { useSelector } from 'react-redux';
 import { fakeMusicPlayer } from './fakeData';
 
 function Playlist() {
 
-  const state = useSelector((state: any) => state.counter)
   return (
     <div>
 
@@ -18,4 +16,4 @@ function Playlist() {
   )
 }
 
-export default Playlist
+export default React.memo(Playlist)

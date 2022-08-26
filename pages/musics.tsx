@@ -12,7 +12,7 @@ function Music() {
   return (
     <div>
       <Avatar image={require('../public/assets/avatar/music.png')} />
-      <Heading type='big'>🎵 My Favorite Musics</Heading>
+      <Heading type='big'>🎵 My Favorite Music</Heading>
       <br />
       <br />
       <Playlist />
@@ -21,4 +21,4 @@ function Music() {
   )
 }
 
-export default Music
+export default React.memo(Music)
