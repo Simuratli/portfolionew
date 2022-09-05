@@ -1,0 +1,16 @@
+.contact{
+  &__content{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 760px) {
+  .contact{
+    &__content{
+      gap:20px;
+    }
+  }
+}

@@ -2,7 +2,7 @@ import styles from '../styles/Home.module.scss';
 import { Heading, GrayBox, Avatar } from '../components';
 import { Resume, Experience, More } from '../containers';
 import classes from '../styles/components/graybox.module.scss';
-
+import { routes } from '../utils/routes.util'
 
 export default function Home() {
   return (
@@ -26,7 +26,11 @@ export default function Home() {
       </GrayBox>
       <Resume />
       <Experience />
-      <More />
+      <More
+        headerTitle='🕹️ Want to see more things related with me'
+        subHeaderTitle='You can use these cards for reading my articles, seeing my projects, learning my favorite music and books, and more contact information for me.'
+        data={routes}
+      />
     </div>
   )
 }

@@ -1,8 +1,9 @@
 import '../styles/globals.scss'
 import React from 'react';
-import { HeaderImage, Avatar } from '../components';
+import { HeaderImage, LogoutButton } from '../components';
 import { store } from '../redux/store';
 import { Provider } from 'react-redux';
+import { AuthContextProvider } from '../context/AuthContext';
 
 interface AppPropTypes {
   Component: React.ElementType,
@@ -10,13 +11,19 @@ interface AppPropTypes {
 }
 
 function MyApp({ Component, pageProps }: AppPropTypes) {
+
+
+
   return <Provider store={store}>
-    <div className='main-container'>
-      <HeaderImage />
-      <div className="component-container">
-        <Component {...pageProps} />
+    <AuthContextProvider>
+      <LogoutButton />
+      <div className='main-container'>
+        <HeaderImage />
+        <div className="component-container">
+          <Component {...pageProps} />
+        </div>
       </div>
-    </div>
+    </AuthContextProvider>
   </Provider>
 }
 

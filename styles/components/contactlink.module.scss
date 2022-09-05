@@ -1,0 +1,18 @@
+@import '../global/colors.scss';
+
+.contactLink{
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: none;
+  color: $textBlack;
+
+  &__text{
+    text-decoration: underline;
+  }
+}
