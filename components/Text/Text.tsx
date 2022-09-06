@@ -3,9 +3,7 @@ import { TextPropTypes } from './Text.types';
 import classes from '../../styles/components/text.module.scss';
 
 function Text({ text }: TextPropTypes) {
-  return (
-    <p className={classes.text}>{text}</p>
-  )
+  return <p className={classes.text}>{text}</p>;
 }
 
-export default Text
+export default Text;

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 function musics() {
-  return (
-    <div>musics</div>
-  )
+  return <div className="without_avatar"></div>;
 }
 
-export default musics
+export default React.memo(musics);

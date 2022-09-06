@@ -5,13 +5,13 @@ import { Heading } from '../../components';
 
 function ArticleItself() {
   const router = useRouter();
-  const { slug } = router.query
+  const { slug } = router.query;
 
   return (
     <div className={classes.individual__article}>
       <Heading type="big">Post: {slug}</Heading>
     </div>
-  )
+  );
 }
 
-export default ArticleItself
+export default ArticleItself;
