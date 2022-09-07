@@ -1,0 +1,20 @@
+.musiclistdb{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F0F8FF;
+  padding: 5px;
+  border-radius: 5px;
+
+  svg{
+    cursor: pointer;
+    color: #BA2B2B;
+  }
+}
+
+.musiclist{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

@@ -1,6 +1,17 @@
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 import React from 'react';
-import { Heading, Avatar, ContactLink } from '../components';
 import classes from '../styles/containers/contact.module.scss';
+
+const DynamicAvatar = dynamic(() =>
+  import('../components').then((mod) => mod.Avatar)
+);
+const DynamicHeading = dynamic(() =>
+  import('../components').then((mod) => mod.Heading)
+);
+const DynamicContactLink = dynamic(() =>
+  import('../components').then((mod) => mod.ContactLink)
+);
 
 const contactData = [
   {
@@ -43,11 +54,21 @@ const contactData = [
 function Contact() {
   return (
     <div className={classes.contact}>
-      <Avatar image={require('../public/assets/avatar/contact.png')} />
-      <Heading type="big">Contact with me</Heading>
+      <Suspense fallback={`Loading...`}>
+        <DynamicAvatar image={require('../public/assets/avatar/contact.png')} />
+      </Suspense>
+      <Suspense fallback={`Loading...`}>
+        <DynamicHeading type="big">
+          <>Contact with me</>
+        </DynamicHeading>
+      </Suspense>
       <div className={classes.contact__content}>
         {contactData.map((item) => {
-          return <ContactLink key={item.text} {...item} />;
+          return (
+            <Suspense key={item.text} fallback={`Loading...`}>
+              <DynamicContactLink {...item} />
+            </Suspense>
+          );
         })}
       </div>
     </div>
