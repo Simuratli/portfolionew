@@ -13,7 +13,7 @@ const DynamicHeaderImage = dynamic(() =>
   import('../components').then((mod: any) => mod.HeaderImage)
 );
 
-import { TransitionPage } from '../components'
+import { TransitionPage } from '../components';
 
 interface AppPropTypes {
   Component: React.ElementType;
