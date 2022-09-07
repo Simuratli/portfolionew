@@ -2,14 +2,17 @@ import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 import React from 'react';
 import classes from '../styles/containers/books.module.scss';
+import { AvatarPropTypes } from '../components/Avatar/Avatar.types'
+import { HeadingPropTypes } from '../components/Heading/Heading.types'
+import { TogglePropTypes } from '../components/Toggle/toggle.types'
 
-const DynamicAvatar = dynamic(() =>
+const DynamicAvatar = dynamic<AvatarPropTypes>(() =>
   import('../components').then((mod) => mod.Avatar)
 );
-const DynamicHeading = dynamic(() =>
+const DynamicHeading = dynamic<HeadingPropTypes>(() =>
   import('../components').then((mod) => mod.Heading)
 );
-const DynamicToggle = dynamic(() =>
+const DynamicToggle = dynamic<TogglePropTypes>(() =>
   import('../components').then((mod) => mod.Toggle)
 );
 
