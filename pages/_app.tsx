@@ -34,9 +34,11 @@ function MyApp({ Component, pageProps }: AppPropTypes) {
             <DynamicHeaderImage />
           </Suspense>
           <div className="component-container">
-            <DynamicTransition>
-              <Component {...pageProps} />
-            </DynamicTransition>
+            <Suspense fallback={`Loading...`}>
+              <DynamicTransition>
+                <Component {...pageProps} />
+              </DynamicTransition>
+            </Suspense>
           </div>
         </div>
       </AuthContextProvider>
