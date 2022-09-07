@@ -13,9 +13,7 @@ const DynamicHeaderImage = dynamic(() =>
   import('../components').then((mod) => mod.HeaderImage)
 );
 
-const DynamicTransition = dynamic(() =>
-  import('../components').then((mod) => mod.TransitionPage)
-);
+import { TransitionPage } from '../components'
 
 interface AppPropTypes {
   Component: React.ElementType;
@@ -34,11 +32,9 @@ function MyApp({ Component, pageProps }: AppPropTypes) {
             <DynamicHeaderImage />
           </Suspense>
           <div className="component-container">
-            <Suspense fallback={`Loading...`}>
-              <DynamicTransition>
-                <Component {...pageProps} />
-              </DynamicTransition>
-            </Suspense>
+            <TransitionPage>
+              <Component {...pageProps} />
+            </TransitionPage>
           </div>
         </div>
       </AuthContextProvider>
