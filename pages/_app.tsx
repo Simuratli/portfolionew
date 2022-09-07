@@ -6,11 +6,11 @@ import { store } from '../redux/store';
 import { Provider } from 'react-redux';
 import { AuthContextProvider } from '../context/AuthContext';
 const DynamicLogoutButton = dynamic(() =>
-  import('../components').then((mod) => mod.LogoutButton)
+  import('../components').then((mod: any) => mod.LogoutButton)
 );
 
 const DynamicHeaderImage = dynamic(() =>
-  import('../components').then((mod) => mod.HeaderImage)
+  import('../components').then((mod: any) => mod.HeaderImage)
 );
 
 import { TransitionPage } from '../components'
