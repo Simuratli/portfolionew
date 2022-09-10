@@ -3,6 +3,6 @@ export interface InputPropTypes {
   name?: string;
   type: string;
   placeholder: string;
-  value: string;
+  value: string | number;
   label: string;
 }

@@ -1,7 +1,13 @@
 import React from 'react'
 import { Heading, Input, TextEditor } from '../../components';
+import { useTypedSelector } from '../../hooks/useTypedSelector'
+import { useDispatch } from 'react-redux'
+import { setName, setAboutMe, setAge, setCurrentlyLearning, setExperience, setTitle, setWorkPlace } from '../../redux/reducers/aboutme';
 
 function AboutMe() {
+  const dispatch = useDispatch();
+  const aboutMeState = useTypedSelector(state => state.aboutMe);
+
   return (
     <div>
       <Heading type="big">
@@ -12,44 +18,44 @@ function AboutMe() {
       <Input
         placeholder="Name"
         label="Name"
-        onChange={() => { }}
+        onChange={(e) => { dispatch(setName(e.target.value)) }}
         type="text"
-        value={'Eljan Simuratli'}
+        value={aboutMeState.name}
       />
       <Input
         placeholder="Age"
         label="Age"
-        onChange={() => { }}
+        onChange={(e) => { dispatch(setAge(e.target.value)) }}
         type="text"
-        value={'24'}
+        value={aboutMeState.age}
       />
       <Input
         placeholder="Experience"
         label="Experience"
-        onChange={() => { }}
+        onChange={(e) => { dispatch(setExperience(e.target.value)) }}
         type="text"
-        value={'4 year'}
+        value={aboutMeState.experience}
       />
       <Input
         placeholder="Work place"
         label="Work place"
-        onChange={() => { }}
+        onChange={(e) => { dispatch(setWorkPlace(e.target.value)) }}
         type="text"
-        value={'UDS Systems'}
+        value={aboutMeState.workPlace}
       />
       <Input
         placeholder="Title"
         label="Title"
-        onChange={() => { }}
+        onChange={(e) => { dispatch(setTitle(e.target.value)) }}
         type="text"
-        value={'Frontend developer'}
+        value={aboutMeState.title}
       />
       <Input
         placeholder="Currently Learning"
         label="Currently Learning"
-        onChange={() => { }}
+        onChange={(e) => { dispatch(setCurrentlyLearning(e.target.value)) }}
         type="text"
-        value={'CI/CD'}
+        value={aboutMeState.currentlyLearning}
       />
       <TextEditor />
     </div>
