@@ -37,7 +37,8 @@ function useLogin() {
 
   return {
     handleInputChange,
-    loginHandler
+    loginHandler,
+    data
   }
 }
 

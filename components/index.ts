@@ -12,3 +12,5 @@ export { default as Toggle } from './Toggle';
 export { default as ContactLink } from './ContactLink';
 export { default as LogoutButton } from './LogoutButton';
 export { default as TransitionPage } from './TransitionPage';
+export { default as Upload } from './Upload';
+export { default as Input } from './Input';

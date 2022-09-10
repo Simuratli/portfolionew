@@ -6,6 +6,7 @@ import {
   signOut,
 } from 'firebase/auth'
 import { auth } from '../firebase/config'
+import { useRouter } from 'next/router'
 
 const AuthContext = createContext<any>({})
 
@@ -18,7 +19,7 @@ export const AuthContextProvider = ({
 }) => {
   const [user, setUser] = useState<any>(null)
   const [loading, setLoading] = useState(true)
-
+  const router = useRouter()
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -47,6 +48,7 @@ export const AuthContextProvider = ({
   const logout = async () => {
     setUser(null)
     await signOut(auth)
+    router.push('/login')
   }
 
   return (

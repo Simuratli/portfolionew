@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import classes from '../styles/containers/login.module.scss';
-import { Heading } from '../components';
+import { Heading, Input } from '../components';
 
 function SignUp() {
   const { signup } = useAuth();
@@ -30,17 +30,21 @@ function SignUp() {
     <div className="without_avatar">
       <form className={classes.form} onSubmit={signupHandler}>
         <Heading type="big">SIGNUP</Heading>
-        <input
+        <Input
+          label="Email"
           name="email"
           onChange={handleInputChange}
           type="text"
           placeholder="Email"
+          value={data.email}
         />
-        <input
+        <Input
+          label="Password"
           name="password"
           onChange={handleInputChange}
           type="password"
           placeholder="Password"
+          value={data.password}
         />
         <button onClick={signupHandler}>Sign up</button>
       </form>
