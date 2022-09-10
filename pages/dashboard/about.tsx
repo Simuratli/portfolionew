@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Input, Heading, TextEditor } from '../../components';
+import { Heading } from '../../components';
+import { AboutMe } from '../../containers';
 import { useAuth } from '../../context/AuthContext';
 import { useRouter } from 'next/router';
 
@@ -14,19 +15,13 @@ function About() {
 
   return (
     <div className="without_avatar">
+      <AboutMe />
+
       <Heading type="big">
-        <>Data&apos;s for Home page</>
+        <br />
+        <>👨‍💻 Work experience</>
+        <br />
       </Heading>
-      <br />
-      <br />
-      <Input
-        placeholder="Name"
-        label="Name"
-        onChange={() => {}}
-        type="text"
-        value={'Eljan Simuratli'}
-      />
-      <TextEditor />
     </div>
   );
 }

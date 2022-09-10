@@ -35,13 +35,9 @@ function TextEditor() {
   };
 
   return (
-    <div>
-      <textarea
-        className={styles.texteditor}
-        value={data.html}
-        onChange={handleChange}
-        onBlur={sanitize}
-      />
+    <div className={styles.texteditor}>
+      <label>Description</label>
+      <textarea value={data.html} onChange={handleChange} onBlur={sanitize} />
     </div>
   );
 }

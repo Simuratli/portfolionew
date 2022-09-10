@@ -1,11 +1,18 @@
 @import '../global/colors.scss';
 .texteditor{
-  width: 100%;
-  margin: 20px 0;
-  padding: 10px;
-  outline: none;
-  border-radius: 5px;
-  border: 1px solid $textBlack;
-  resize: vertical;
-  height: 400px;
+  textarea{
+    width: 100%;
+    
+    padding: 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid $textBlack;
+    resize: vertical;
+    height: 400px;
+  }
+  label{
+    font-weight: bold;
+    margin: 10px;
+    display: block;
+  }
 }
