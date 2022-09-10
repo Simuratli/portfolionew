@@ -1,3 +1,3 @@
 export interface AvatarPropTypes {
-  image: string
+  image: string;
 }

@@ -6,19 +6,20 @@ import { audioReducerType } from '../redux/reducers/audio';
 import { RootState } from '../redux/store';
 
 function Music() {
-
-  const musicPlayer = useSelector<RootState, audioReducerType>((state) => state.player);
+  const musicPlayer = useSelector<RootState, audioReducerType>(
+    (state) => state.player
+  );
 
   return (
     <div>
       <Avatar image={require('../public/assets/avatar/music.png')} />
-      <Heading type='big'>🎵 My Favorite Musics</Heading>
+      <Heading type="big">🎵 My Favorite Music</Heading>
       <br />
       <br />
       <Playlist />
       <AudioPlayer />
     </div>
-  )
+  );
 }
 
-export default Music
+export default React.memo(Music);

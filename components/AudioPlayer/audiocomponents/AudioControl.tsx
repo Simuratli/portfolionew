@@ -7,12 +7,10 @@ function AudioControl({ togglePlay, isPlaying }: AudioControlsPropTypes) {
   return (
     <div className={classes.audio__control}>
       <button className={classes.playPause} onClick={togglePlay}>
-        {
-          isPlaying ? <AiOutlinePauseCircle /> : <AiOutlinePlayCircle />
-        }
+        {isPlaying ? <AiOutlinePauseCircle /> : <AiOutlinePlayCircle />}
       </button>
     </div>
-  )
+  );
 }
 
-export default AudioControl
+export default AudioControl;

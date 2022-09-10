@@ -48,10 +48,6 @@ export const resumeData = [
     title: "📘 Currently Learning",
     badges: [
       {
-        color: "rgba(184, 70, 63, 0.3)",
-        title: "Data structures"
-      },
-      {
         color: "rgba(223, 172, 3, 0.3)",
         title: "CI/CD"
       },

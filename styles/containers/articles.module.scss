@@ -1,0 +1,19 @@
+.articles{
+  &__content{
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:30px;
+  }
+}
+
+.individual__article{
+  margin-top: 200px;
+}
+
+
+@media (max-width: 768px) {
+  .individual__article{
+    margin-top: 150px;
+  }
+}

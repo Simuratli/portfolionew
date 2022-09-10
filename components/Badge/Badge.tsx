@@ -7,7 +7,7 @@ function Badge({ text, color }: BadgePropTypes) {
     <span className={classes.badge} style={{ backgroundColor: color }}>
       {text}
     </span>
-  )
+  );
 }
 
-export default Badge
+export default Badge;

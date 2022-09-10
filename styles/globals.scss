@@ -22,9 +22,25 @@
   font-style: italic;
 }
 
+
+.without_avatar{
+  margin-top: 200px;
+}
+
+@media (max-width: 768px) {
+  .without_avatar{
+    margin-top: 150px;
+  }
+}
+
 @media (max-width: 768px) {
   .component-container {
     width: 100%;
     padding: 20px;
   }
+
+  .component-container {
+    top: -102px;
+  }
+  
 }

@@ -14,3 +14,12 @@
 .graybox__list{
   padding-left: 35px;
 }
+
+@media (max-width: 768px) {
+  .graybox {
+    font-size: 18px;
+    line-height: 24px;
+    color: #37352F;
+  }
+  
+}
