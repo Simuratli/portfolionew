@@ -15,3 +15,4 @@ export { default as TransitionPage } from './TransitionPage';
 export { default as Upload } from './Upload';
 export { default as Input } from './Input';
 export { default as TextEditor } from './TextEditor';
+export { default as Button } from './Button';

@@ -1,12 +1,25 @@
 import React from 'react'
-import { Heading, Input, TextEditor } from '../../components';
+import { Heading, Input, TextEditor, Button } from '../../components';
 import { useTypedSelector } from '../../hooks/useTypedSelector'
 import { useDispatch } from 'react-redux'
 import { setName, setAboutMe, setAge, setCurrentlyLearning, setExperience, setTitle, setWorkPlace } from '../../redux/reducers/aboutme';
+import sanitizeHtml from 'sanitize-html';
+
 
 function AboutMe() {
   const dispatch = useDispatch();
   const aboutMeState = useTypedSelector(state => state.aboutMe);
+
+
+  const sanitizeConf = {
+    allowedTags: ['b', 'i', 'em', 'strong', 'a', 'p', 'h1'],
+    allowedAttributes: { a: ['href'] },
+  };
+
+  const sanitize = () => {
+
+    // dispatch(setAboutMe(sanitizeHtml(aboutMeState.aboutMe, sanitizeConf)))
+  };
 
   return (
     <div>
@@ -57,7 +70,9 @@ function AboutMe() {
         type="text"
         value={aboutMeState.currentlyLearning}
       />
-      <TextEditor />
+      <TextEditor sanitize={sanitize} value={aboutMeState.aboutMe} onChange={(e) => { dispatch(setAboutMe(e.target.value)) }} />
+      <br />
+      <Button text='Save About Me' />
     </div>
   )
 }

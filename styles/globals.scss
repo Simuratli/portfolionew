@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import './global/colors.scss';
 
 * {
   margin: 0;
@@ -25,6 +26,18 @@
 
 .without_avatar{
   margin-top: 200px;
+}
+
+
+button{
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  color: $white;
+  background: $textBlack;
+  border-radius: 5px;
 }
 
 @media (max-width: 768px) {
