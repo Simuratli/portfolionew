@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import { Input, Heading } from '../../components';
+import { Input, Heading, TextEditor } from '../../components';
 import { useAuth } from '../../context/AuthContext';
 import { useRouter } from 'next/router';
+
 function About() {
   const router = useRouter();
 
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
 
   useEffect(() => {
     !user && router.push('/login');
@@ -21,10 +22,11 @@ function About() {
       <Input
         placeholder="Name"
         label="Name"
-        onChange={() => { }}
+        onChange={() => {}}
         type="text"
         value={'Eljan Simuratli'}
       />
+      <TextEditor />
     </div>
   );
 }
