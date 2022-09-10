@@ -21,7 +21,7 @@ function About() {
       <Input
         placeholder="Name"
         label="Name"
-        onChange={() => {}}
+        onChange={() => { }}
         type="text"
         value={'Eljan Simuratli'}
       />
