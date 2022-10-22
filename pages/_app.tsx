@@ -15,9 +15,9 @@ function MyApp({ Component, pageProps }: AppPropTypes) {
     <Provider store={store}>
       <AuthContextProvider>
         <LogoutButton />
-        <div className="main-container">
+        <div className='main-container'>
           <HeaderImage />
-          <div className="component-container">
+          <div className='component-container'>
             <TransitionPage>
               <Component {...pageProps} />
             </TransitionPage>

@@ -27,23 +27,23 @@ function SignUp() {
   };
 
   return (
-    <div className="without_avatar">
+    <div className='without_avatar'>
       <form className={classes.form} onSubmit={signupHandler}>
-        <Heading type="big">SIGNUP</Heading>
+        <Heading type='big'>SIGNUP</Heading>
         <Input
-          label="Email"
-          name="email"
+          label='Email'
+          name='email'
           onChange={handleInputChange}
-          type="text"
-          placeholder="Email"
+          type='text'
+          placeholder='Email'
           value={data.email}
         />
         <Input
-          label="Password"
-          name="password"
+          label='Password'
+          name='password'
           onChange={handleInputChange}
-          type="password"
-          placeholder="Password"
+          type='password'
+          placeholder='Password'
           value={data.password}
         />
         <button onClick={signupHandler}>Sign up</button>

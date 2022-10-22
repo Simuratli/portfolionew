@@ -7,23 +7,23 @@ function Login() {
   const { handleInputChange, loginHandler, data } = useLogin();
 
   return (
-    <div className="without_avatar">
+    <div className='without_avatar'>
       <form className={classes.form} onSubmit={loginHandler}>
-        <Heading type="big">LOGIN</Heading>
+        <Heading type='big'>LOGIN</Heading>
         <Input
           value={data.email}
-          name="email"
+          name='email'
           onChange={handleInputChange}
-          type="text"
-          placeholder="Email"
+          type='text'
+          placeholder='Email'
           label={'Email'}
         />
         <Input
           value={data.password}
-          name="password"
+          name='password'
           onChange={handleInputChange}
-          type="password"
-          placeholder="Password"
+          type='password'
+          placeholder='Password'
           label={'Password'}
         />
         <button onClick={loginHandler}>Login</button>

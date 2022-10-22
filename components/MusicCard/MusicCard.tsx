@@ -3,19 +3,13 @@ import Image from 'next/image';
 import classes from '../../styles/components/musiccard.module.scss';
 import { MusicCardPropTypes } from './MusicCard.types';
 import { AiOutlinePlayCircle, AiOutlinePauseCircle } from 'react-icons/ai';
-import {
-  setPlayerMusic,
-  setPlay,
-  audioReducerType,
-} from '../../redux/reducers/audio';
+import { setPlayerMusic, setPlay, audioReducerType } from '../../redux/reducers/audio';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../redux/store';
 
 function MusicCard({ image, singer, name, music }: MusicCardPropTypes) {
   const dispatch = useDispatch();
-  const musicPlayer = useSelector<RootState, audioReducerType>(
-    (state) => state.player
-  );
+  const musicPlayer = useSelector<RootState, audioReducerType>((state) => state.player);
 
   const onClickPlay = () => {
     dispatch(
@@ -23,7 +17,7 @@ function MusicCard({ image, singer, name, music }: MusicCardPropTypes) {
         isPlaying: false,
         name: `${name} - ${singer}`,
         music: music,
-      })
+      }),
     );
 
     if (musicPlayer.name.includes(name)) {
@@ -49,7 +43,7 @@ function MusicCard({ image, singer, name, music }: MusicCardPropTypes) {
             <AiOutlinePlayCircle />
           )}
         </button>
-        <Image layout="fill" alt={singer} src={image} />
+        <Image layout='fill' alt={singer} src={image} />
       </div>
       <div className={classes.musicCard__content}>
         <h1>{name}</h1>

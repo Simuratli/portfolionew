@@ -17,11 +17,7 @@ function Toggle({ header, children }: TogglePropTypes) {
         <DropdownIcon rotate={open} />
         <span>{header}</span>
       </div>
-      <div
-        className={`${classes.toggle__content} ${
-          open && classes.toggle__content__open
-        }`}
-      >
+      <div className={`${classes.toggle__content} ${open && classes.toggle__content__open}`}>
         {children}
       </div>
     </div>

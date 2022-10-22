@@ -12,9 +12,9 @@ function Chapters({ chapters, duration }: AudioChapterComponentPropTypes) {
           <div
             style={{ left: `${leftStyle}%`, width: `${widthStyle}%` }}
             key={index}
-            className={`${classes.chapter} ${
-              chapter.start === 0 && classes.start
-            } ${chapter.end === duration && classes.end}`}
+            className={`${classes.chapter} ${chapter.start === 0 && classes.start} ${
+              chapter.end === duration && classes.end
+            }`}
           ></div>
         );
       })}

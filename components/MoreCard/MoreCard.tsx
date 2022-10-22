@@ -10,10 +10,10 @@ function MoreCard({ link, image, text }: MoreCardPropTypes) {
     <Link href={link}>
       <div className={classes.more__card}>
         <div className={classes.more__card__image}>
-          <Image layout="fill" alt="covers" src={image} />
+          <Image layout='fill' alt='covers' src={image} />
         </div>
         <div className={classes.more__card__footer}>
-          <Heading type="small">{text}</Heading>
+          <Heading type='small'>{text}</Heading>
         </div>
       </div>
     </Link>

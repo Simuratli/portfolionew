@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
-import { Heading } from '../../components';
-import { AboutMe } from '../../containers';
+import { AboutMe, Experience } from '../../containers/Dashboard';
 import { useAuth } from '../../context/AuthContext';
 import { useRouter } from 'next/router';
 
 function About() {
   const router = useRouter();
-
   const { user } = useAuth();
 
   useEffect(() => {
@@ -14,14 +12,9 @@ function About() {
   }, [user, router]);
 
   return (
-    <div className="without_avatar">
+    <div className='without_avatar'>
       <AboutMe />
-
-      <Heading type="big">
-        <br />
-        <>👨‍💻 Work experience</>
-        <br />
-      </Heading>
+      <Experience />
     </div>
   );
 }

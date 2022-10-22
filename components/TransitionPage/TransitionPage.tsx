@@ -29,15 +29,9 @@ const TransitionEffect1 = ({ children }: { children: React.ReactNode }) => {
   const { asPath } = useRouter();
 
   return (
-    <div className="effect-1">
+    <div className='effect-1'>
       <AnimatePresence initial={false} exitBeforeEnter>
-        <motion.div
-          key={asPath}
-          variants={variants}
-          animate="in"
-          initial="out"
-          exit="out"
-        >
+        <motion.div key={asPath} variants={variants} animate='in' initial='out' exit='out'>
           {children}
         </motion.div>
       </AnimatePresence>

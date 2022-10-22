@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from '../styles/containers/contact.module.scss';
 import { Avatar, ContactLink, Heading } from '../components';
-
+import ContactImage from '../public/assets/avatar/contact.png';
 const contactData = [
   {
     icon: '📧',
@@ -43,8 +43,8 @@ const contactData = [
 function Contact() {
   return (
     <div className={classes.contact}>
-      <Avatar image={require('../public/assets/avatar/contact.png')} />
-      <Heading type="big">
+      <Avatar image={ContactImage} />
+      <Heading type='big'>
         <>Contact with me</>
       </Heading>
       <div className={classes.contact__content}>

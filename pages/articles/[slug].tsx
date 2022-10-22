@@ -9,7 +9,7 @@ function ArticleItself() {
 
   return (
     <div className={classes.individual__article}>
-      <Heading type="big">Post: {slug}</Heading>
+      <Heading type='big'>Post: {slug}</Heading>
     </div>
   );
 }

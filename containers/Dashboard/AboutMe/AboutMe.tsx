@@ -1,11 +1,11 @@
 import React from 'react'
-import { Heading, Input, TextEditor, Button } from '../../components';
-import { useAboutMe } from '../../hooks/DashboardHooks/useAboutMe'
-import { useTypedSelector } from '../../hooks/useTypedSelector'
-import { ButtonColorEnum } from '../../utils/global.types';
+import { Heading, Input, TextEditor, Button } from '../../../components';
+import { useAboutMe } from '../../../hooks/DashboardHooks/useAboutMe'
+import { useTypedSelector } from '../../../hooks/useTypedSelector'
+import { ButtonColorEnum } from '../../../utils/global.types';
 
 function AboutMe() {
-  const { addAboutMeText, handleSaveButton, handleChange, saved } = useAboutMe();
+  const { handleSaveButton, handleChange, saved } = useAboutMe();
   const aboutMeState = useTypedSelector(state => state.aboutMe);
 
 
@@ -64,7 +64,7 @@ function AboutMe() {
         type="text"
         value={aboutMeState.currentlyLearning}
       />
-      <TextEditor name="aboutMe" sanitize={addAboutMeText} value={aboutMeState.aboutMe} onChange={handleChange} />
+      <TextEditor name="aboutMe" value={aboutMeState.aboutMe} onChange={handleChange} />
       <br />
       <Button color={saved ? ButtonColorEnum.Success : ButtonColorEnum.Black} onClick={handleSaveButton} text={saved ? "Saved" : 'Save About Me'} />
     </div>

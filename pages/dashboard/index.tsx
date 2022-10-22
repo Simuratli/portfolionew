@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { Avatar } from '../../components';
 import { More } from '../../containers';
 import { routes } from '../../utils/routes-dashboard.util';
-
+import ProjectsImage from '../../public/assets/avatar/projects.png';
 function Dashboard() {
   const router = useRouter();
   const { user } = useAuth();
@@ -17,10 +17,10 @@ function Dashboard() {
     <div>
       {user && user.email === 'simuratli@gmail.com' && (
         <div>
-          <Avatar image={require('../../public/assets/avatar/projects.png')} />
+          <Avatar image={ProjectsImage} />
           <More
-            headerTitle="Dashboard"
-            subHeaderTitle="Edit what you want to see in portfolio"
+            headerTitle='Dashboard'
+            subHeaderTitle='Edit what you want to see in portfolio'
             data={routes}
           />
         </div>

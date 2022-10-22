@@ -1,10 +1,7 @@
 import React from 'react';
 import classes from '../../../styles/components/audioplayer.module.scss';
 import Chapters from './Chapters';
-import {
-  ChapterTypes,
-  ProgressBarForMusicPropTypes,
-} from '../AudioPlayer.types';
+import { ChapterTypes, ProgressBarForMusicPropTypes } from '../AudioPlayer.types';
 
 function ProgressBarForMusic({
   progressBarRef,
@@ -17,7 +14,7 @@ function ProgressBarForMusic({
     <div className={classes.progressBarWrapper}>
       <input
         ref={progressBarRef}
-        type="range"
+        type='range'
         onChange={changeRange}
         defaultValue={0}
         className={classes.progressBar}

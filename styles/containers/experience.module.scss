@@ -1,3 +1,5 @@
+@import '../global/colors.scss';
+
 .experience {
   margin-top: 50px;
 
@@ -21,4 +23,27 @@
     }
   }
 
+
+  &__heading{
+    display: flex;
+    align-items: cennter;
+    justify-content: space-between;
+  }
+
+  &__add{
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    padding: 5px;
+    height: 50px;
+    display: inline;
+    width: 50px;
+    background-color: $orange;
+    color: $textBlack;
+    font-size: 30px;
+    display: grid;
+    place-content: center;
+    font-weight: bold;
+  }
 }

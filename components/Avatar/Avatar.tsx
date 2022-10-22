@@ -6,7 +6,7 @@ import { AvatarPropTypes } from './Avatar.types';
 function Avatar({ image }: AvatarPropTypes) {
   return (
     <div className={classes.avatar}>
-      <Image layout="fill" alt="Eljan Simuratli" src={image} />
+      <Image layout='fill' alt='Eljan Simuratli' src={image} />
     </div>
   );
 }
