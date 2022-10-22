@@ -12,6 +12,7 @@ export function useAboutMe() {
 
 
 
+
   const getAboutMeData = async () => {
     const dbRef = await ref(getDatabase());
     const snapshot = await get(child(dbRef, `about/`));
@@ -22,6 +23,7 @@ export function useAboutMe() {
       console.log("No data available");
     }
   }
+
 
 
   const handleSaveButton = async () => {

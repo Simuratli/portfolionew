@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Heading, Input, TextEditor, Button } from '../../../components';
 import { useAboutMe } from '../../../hooks/DashboardHooks/useAboutMe'
 import { useTypedSelector } from '../../../hooks/useTypedSelector'
 import { ButtonColorEnum } from '../../../utils/global.types';
 
 function AboutMe() {
-  const { handleSaveButton, handleChange, saved } = useAboutMe();
+  const { handleSaveButton, handleChange, saved, getAboutMeData } = useAboutMe();
   const aboutMeState = useTypedSelector(state => state.aboutMe);
-
+  useEffect(() => {
+    getAboutMeData();
+  }, [])
 
   return (
     <div>
