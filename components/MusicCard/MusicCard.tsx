@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import classes from '../../styles/components/musiccard.module.scss';
 import { MusicCardPropTypes } from './MusicCard.types';

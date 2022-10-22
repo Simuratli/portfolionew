@@ -21,7 +21,7 @@ const aboutMeReducer = createSlice({
     workPlace: 'UDS Systems',
     title: 'Front end developer',
     currentlyLearning: 'CI/CD',
-    aboutMe: `<p>Hello <b>World</b> !</p><p>Paragraph 2</p>`,
+    aboutMe: `Loading...`,
   } as audioReducerType,
 
   reducers: {
@@ -46,10 +46,19 @@ const aboutMeReducer = createSlice({
     setAboutMe: (state: audioReducerType, action) => {
       state.aboutMe = action.payload
     },
+    setAll: (state: audioReducerType, action) => {
+      state.aboutMe = action.payload.aboutMe
+      state.currentlyLearning = action.payload.currentlyLearning
+      state.title = action.payload.title
+      state.workPlace = action.payload.workPlace
+      state.experience = action.payload.experience
+      state.age = action.payload.age
+      state.name = action.payload.name
+    },
   }
 
 })
 
-export const { setAboutMe, setAge, setCurrentlyLearning, setExperience, setName, setTitle, setWorkPlace } = aboutMeReducer.actions;
+export const { setAboutMe, setAge, setCurrentlyLearning, setExperience, setName, setTitle, setWorkPlace, setAll } = aboutMeReducer.actions;
 
 export default aboutMeReducer.reducer

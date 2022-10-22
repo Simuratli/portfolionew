@@ -36,8 +36,18 @@ button{
   outline: none;
   cursor: pointer;
   color: $white;
-  background: $textBlack;
   border-radius: 5px;
+  &.danger{
+    background-color: $danger;
+  }
+
+  &.success{
+    background-color: $success;
+  }
+
+  &.black{
+    background: $textBlack;
+  }
 }
 
 @media (max-width: 768px) {

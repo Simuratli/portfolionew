@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import classes from '../../styles/components/audioplayer.module.scss';
 import { useAudioPlayer } from '../../hooks/AudioHook';
 import { Time, ProgressBarForMusic, AudioControl } from './audiocomponents';

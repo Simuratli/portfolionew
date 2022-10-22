@@ -17,7 +17,7 @@ function SignUp() {
     }));
   };
 
-  const signupHandler = async (e: any) => {
+  const signupHandler = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       await signup(data.email, data.password);

@@ -1,4 +1,4 @@
 export interface BadgePropTypes {
   color: string;
-  text: string;
+  text: string | number;
 }
