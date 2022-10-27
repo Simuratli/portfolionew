@@ -1,9 +1,9 @@
-import '../styles/globals.scss';
-import React from 'react';
-import { store } from '../redux/store';
-import { Provider } from 'react-redux';
-import { AuthContextProvider } from '../context/AuthContext';
-import { TransitionPage, LogoutButton, HeaderImage } from '../components';
+import "../styles/globals.scss";
+import React from "react";
+import { store } from "../redux/store";
+import { Provider } from "react-redux";
+import { AuthContextProvider } from "../context/AuthContext";
+import { TransitionPage, LogoutButton, HeaderImage } from "../components";
 
 interface AppPropTypes {
   Component: React.ElementType;
@@ -15,9 +15,9 @@ function MyApp({ Component, pageProps }: AppPropTypes) {
     <Provider store={store}>
       <AuthContextProvider>
         <LogoutButton />
-        <div className='main-container'>
+        <div className="main-container">
           <HeaderImage />
-          <div className='component-container'>
+          <div className="component-container">
             <TransitionPage>
               <Component {...pageProps} />
             </TransitionPage>

@@ -1,1 +1,1 @@
-export { default } from './MoreCard';
+export { default } from "./MoreCard";

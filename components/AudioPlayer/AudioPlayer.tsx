@@ -1,11 +1,11 @@
-import React from 'react';
-import classes from '../../styles/components/audioplayer.module.scss';
-import { useAudioPlayer } from '../../hooks/AudioHook';
-import { Time, ProgressBarForMusic, AudioControl } from './audiocomponents';
-import Heading from '../Heading';
-import { RootState } from '../../redux/store';
-import { useSelector } from 'react-redux';
-import { audioReducerType } from '../../redux/reducers/audio';
+import React from "react";
+import classes from "../../styles/components/audioplayer.module.scss";
+import { useAudioPlayer } from "../../hooks/AudioHook";
+import { Time, ProgressBarForMusic, AudioControl } from "./audiocomponents";
+import Heading from "../Heading";
+import { RootState } from "../../redux/store";
+import { useSelector } from "react-redux";
+import { audioReducerType } from "../../redux/reducers/audio";
 
 function AudioPlayer() {
   const {
@@ -19,24 +19,30 @@ function AudioPlayer() {
     onLoadedMetadata,
   } = useAudioPlayer();
 
-  const musicPlayer = useSelector<RootState, audioReducerType>((state) => state.player);
+  const musicPlayer = useSelector<RootState, audioReducerType>(
+    (state) => state.player
+  );
 
   return (
     <div className={classes.audioPlayer}>
       <div className={classes.audioPlayer__content}>
         <audio
-          preload='metadata'
+          preload="metadata"
           onLoadedMetadata={onLoadedMetadata}
           ref={audioRef}
           src={musicPlayer.music}
         ></audio>
         <div className={classes.audioPlayer__main}>
-          <Heading type='small'>
+          <Heading type="small">
             <>{musicPlayer.name}</>
           </Heading>
           <br />
           <div className={classes.audioPlayer__progress}>
-            <Time calculateTime={calculateTime} currentTime={currentTime} duration={duration} />
+            <Time
+              calculateTime={calculateTime}
+              currentTime={currentTime}
+              duration={duration}
+            />
             <ProgressBarForMusic
               changeRange={changeRange}
               progressBarRef={progressBarRef}
@@ -44,7 +50,10 @@ function AudioPlayer() {
             />
           </div>
         </div>
-        <AudioControl isPlaying={musicPlayer.isPlaying} togglePlay={togglePlay} />
+        <AudioControl
+          isPlaying={musicPlayer.isPlaying}
+          togglePlay={togglePlay}
+        />
       </div>
     </div>
   );

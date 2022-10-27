@@ -1,7 +1,7 @@
-import React from 'react';
-import { useAuth } from '../../context/AuthContext';
-import { FiLogOut } from 'react-icons/fi';
-import classes from '../../styles/components/logout.module.scss';
+import React from "react";
+import { useAuth } from "../../context/AuthContext";
+import { FiLogOut } from "react-icons/fi";
+import classes from "../../styles/components/logout.module.scss";
 
 function LogoutButton() {
   const { user, logout } = useAuth();

@@ -1,1 +1,1 @@
-export { default } from './TransitionPage';
+export { default } from "./TransitionPage";

@@ -1,7 +1,7 @@
-import React from 'react';
-import { AiOutlinePlayCircle, AiOutlinePauseCircle } from 'react-icons/ai';
-import { AudioControlsPropTypes } from '../AudioPlayer.types';
-import classes from '../../../styles/components/audioplayer.module.scss';
+import React from "react";
+import { AiOutlinePlayCircle, AiOutlinePauseCircle } from "react-icons/ai";
+import { AudioControlsPropTypes } from "../AudioPlayer.types";
+import classes from "../../../styles/components/audioplayer.module.scss";
 
 function AudioControl({ togglePlay, isPlaying }: AudioControlsPropTypes) {
   return (

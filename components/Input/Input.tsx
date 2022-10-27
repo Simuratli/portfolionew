@@ -1,8 +1,15 @@
-import React from 'react';
-import { InputPropTypes } from './input.types';
-import classes from '../../styles/components/input.module.scss';
+import React from "react";
+import { InputPropTypes } from "./input.types";
+import classes from "../../styles/components/input.module.scss";
 
-function Input({ onChange, name, placeholder, value, type, label }: InputPropTypes) {
+function Input({
+  onChange,
+  name,
+  placeholder,
+  value,
+  type,
+  label,
+}: InputPropTypes) {
   return (
     <div className={classes.input}>
       <label className={classes.input__label} htmlFor={name}>

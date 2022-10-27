@@ -1,5 +1,5 @@
-import React from 'react';
-import { ButtonPropTypes } from './button.types';
+import React from "react";
+import { ButtonPropTypes } from "./button.types";
 
 function Button({ text, onClick, color }: ButtonPropTypes) {
   return (

@@ -1,6 +1,6 @@
-import React from 'react';
-import classes from '../../../styles/components/audioplayer.module.scss';
-import { AudioChapterComponentPropTypes } from '../AudioPlayer.types';
+import React from "react";
+import classes from "../../../styles/components/audioplayer.module.scss";
+import { AudioChapterComponentPropTypes } from "../AudioPlayer.types";
 
 function Chapters({ chapters, duration }: AudioChapterComponentPropTypes) {
   return (
@@ -12,9 +12,9 @@ function Chapters({ chapters, duration }: AudioChapterComponentPropTypes) {
           <div
             style={{ left: `${leftStyle}%`, width: `${widthStyle}%` }}
             key={index}
-            className={`${classes.chapter} ${chapter.start === 0 && classes.start} ${
-              chapter.end === duration && classes.end
-            }`}
+            className={`${classes.chapter} ${
+              chapter.start === 0 && classes.start
+            } ${chapter.end === duration && classes.end}`}
           ></div>
         );
       })}

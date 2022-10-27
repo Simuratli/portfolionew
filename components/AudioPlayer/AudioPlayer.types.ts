@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 export interface ChapterTypes {
   start: number;
   end: number;

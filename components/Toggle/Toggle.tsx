@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import classes from '../../styles/components/toggle.module.scss';
-import { TogglePropTypes } from './toggle.types';
-import DropdownIcon from './dropdownIcon';
+import React, { useState } from "react";
+import classes from "../../styles/components/toggle.module.scss";
+import { TogglePropTypes } from "./toggle.types";
+import DropdownIcon from "./dropdownIcon";
 
 function Toggle({ header, children }: TogglePropTypes) {
   const [open, setOpen] = useState(false);
@@ -17,7 +17,11 @@ function Toggle({ header, children }: TogglePropTypes) {
         <DropdownIcon rotate={open} />
         <span>{header}</span>
       </div>
-      <div className={`${classes.toggle__content} ${open && classes.toggle__content__open}`}>
+      <div
+        className={`${classes.toggle__content} ${
+          open && classes.toggle__content__open
+        }`}
+      >
         {children}
       </div>
     </div>

@@ -1,6 +1,6 @@
-import React from 'react';
-import { TextEditorPropTypes } from './texteditor.types';
-import styles from '../../styles/components/texteditor.module.scss';
+import React from "react";
+import { TextEditorPropTypes } from "./texteditor.types";
+import styles from "../../styles/components/texteditor.module.scss";
 
 function TextEditor({ value, onChange, name }: TextEditorPropTypes) {
   return (
