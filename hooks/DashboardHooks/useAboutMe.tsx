@@ -17,7 +17,6 @@ export function useAboutMe() {
     const dbRef = await ref(getDatabase());
     const snapshot = await get(child(dbRef, `about/`));
     if (snapshot.exists()) {
-      console.log(snapshot.val());
       dispatch(setAll(snapshot.val()))
     } else {
       console.log("No data available");

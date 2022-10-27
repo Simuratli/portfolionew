@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTypedSelector } from '../useTypedSelector';
 import { useDispatch } from 'react-redux'
-import { setAddNewExperience, setChangeExperienceValue } from '../../redux/reducers/experience'
+import { setAddNewExperience, setChangeExperienceValue, setExperience } from '../../redux/reducers/experience'
 import { getDatabase, ref, set, child, get } from "firebase/database";
 
 export function useExperience() {
@@ -9,12 +9,12 @@ export function useExperience() {
     const dispatch = useDispatch();
     const ExperienceState = useTypedSelector((state) => state.experience.data)
 
-    const db = getDatabase();
+
     const getWorkPlacesData = async () => {
         const dbRef = ref(getDatabase());
         const snapshot = await get(child(dbRef, `experience/`));
         if (snapshot.exists()) {
-            console.log(snapshot.val(), 'experience');
+            setExperience(snapshot.val())
         } else {
             console.log("No data available");
         }
@@ -22,7 +22,7 @@ export function useExperience() {
 
     useEffect(() => {
         getWorkPlacesData()
-    }, [db])
+    }, [])
 
     const addNewJob = () => {
         dispatch(setAddNewExperience())
@@ -42,7 +42,7 @@ export function useExperience() {
         const db = getDatabase();
         set(ref(db, 'experience/'), ExperienceState);
         setSaved(true);
-
+        getWorkPlacesData()
         setTimeout(() => {
             setSaved(false)
         }, 1500);
@@ -53,6 +53,7 @@ export function useExperience() {
         addNewJob,
         handleSave,
         handleChange,
-        saved
+        saved,
+        getWorkPlacesData
     }
 }

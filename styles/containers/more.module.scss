@@ -11,7 +11,7 @@
   }
 
   &__card {
-    width: 310px;
+    width: 250px;
     height: 200px;
     position: relative;
     border: 1px solid rgba(143, 142, 138, 0.3);
@@ -27,7 +27,7 @@
     &__image {
       position: relative;
       height: 150px;
-      width: 310px;
+      width: 100%;
       background-color: #C4C4C4;
 
       img {

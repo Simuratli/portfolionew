@@ -1,6 +1,4 @@
 import { createSlice, current } from '@reduxjs/toolkit';
-
-
 export interface ExperienceDataObjectType {
     id: number;
     title: string;
