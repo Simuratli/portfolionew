@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "../styles/Home.module.scss";
 import { Heading, GrayBox, Avatar } from "../components";
-import { Resume, Experience, More } from "../containers";
+import { Resume, Experience, More, Contact } from "../containers";
 import { routes } from "../utils/routes.util";
 import { useAboutMe } from "../hooks/DashboardHooks/useAboutMe";
 import { useTypedSelector } from "../hooks/useTypedSelector";
@@ -26,6 +26,8 @@ export default function Home() {
         subHeaderTitle="You can use these cards for reading my articles, seeing my projects, learning my favorite music and books, and more contact information for me."
         data={routes}
       />
+
+      <Contact headerTitle="🕹️ Contact with me" />
     </div>
   );
 }

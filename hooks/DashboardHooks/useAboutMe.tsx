@@ -33,7 +33,6 @@ export function useAboutMe() {
     setTimeout(() => {
       setSaved(false)
     }, 1500);
-
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

@@ -14,3 +14,27 @@
     }
   }
 }
+
+
+.dashboard{
+  &__contact{
+    &__main{
+      margin-top: 20px;
+
+      &__button{
+        width: 200px;
+        margin-bottom:40px;
+      }
+
+      &__content{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      &__inputs{
+        width: 250px;
+      }
+    }
+  }
+}

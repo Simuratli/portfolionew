@@ -14,7 +14,7 @@ export function useExperience() {
         const dbRef = ref(getDatabase());
         const snapshot = await get(child(dbRef, `experience/`));
         if (snapshot.exists()) {
-            setExperience(snapshot.val())
+            dispatch(setExperience(snapshot.val()))
         } else {
             console.log("No data available");
         }

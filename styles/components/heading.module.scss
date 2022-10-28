@@ -3,6 +3,12 @@
   font-weight: 700;
   color: #373530;
 
+  &__flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   &.big {
     font-size: 48px;
     line-height: 58px;
