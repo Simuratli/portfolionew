@@ -1,5 +1,5 @@
-import React from 'react'
-import { setChangeValueOfContact, setAddNewContact, setContact } from '../../redux/reducers/contact'
+import React, { useEffect } from 'react'
+import { setChangeValueOfContact, setAddNewContact, setContact, setRemoveContact } from '../../redux/reducers/contact'
 import { useDispatch } from 'react-redux'
 import { getDatabase, ref, child, get } from "firebase/database";
 
@@ -14,6 +14,9 @@ export function useContact() {
         }))
     }
 
+
+
+
     const getContactData = async () => {
         const dbRef = ref(getDatabase());
         const snapshot = await get(child(dbRef, `contact/`));
@@ -25,14 +28,25 @@ export function useContact() {
     }
 
 
+    useEffect(() => {
+        getContactData()
+    }, [])
+
+
     const addNewContact = () => {
         dispatch(setAddNewContact())
+    }
+
+
+    const handleRemove = (id: number) => {
+        dispatch(setRemoveContact(id))
     }
 
 
     return {
         addNewContact,
         getContactData,
-        handleChange
+        handleChange,
+        handleRemove
     }
 }

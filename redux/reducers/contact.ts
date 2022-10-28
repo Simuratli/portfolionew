@@ -11,50 +11,7 @@ const contactReducer = createSlice({
     name: 'contact',
 
     initialState: {
-        data: [
-            {
-                id: 0,
-                icon: "📧",
-                link: "mailto: simuratli@gmail.com",
-                text: "simuratli.com",
-            },
-            {
-                id: 1,
-                icon: "🖥️",
-                link: "https://github.com/simuratli",
-                text: "Github.com",
-            },
-            {
-                id: 2,
-                icon: "🐦",
-                link: "https://twitter.com/Simuratli1",
-                text: "Twitter.com",
-            },
-            {
-                id: 3,
-                icon: "📱",
-                link: "tel:+99450826906",
-                text: "+994508269067",
-            },
-            {
-                id: 4,
-                icon: "🔗",
-                link: "https://www.linkedin.com/in/simuratli",
-                text: "Linkedin.com",
-            },
-            {
-                id: 5,
-                icon: "✉️",
-                link: "https://www.linkedin.com/in/simuratli",
-                text: "Telegram",
-            },
-            {
-                id: 6,
-                icon: "📘",
-                link: "https://medium.com/@simuratli",
-                text: "Medium.com",
-            },
-        ]
+        data: []
     } as ContactStateType,
 
     reducers: {
@@ -93,8 +50,18 @@ const contactReducer = createSlice({
 
             state.data = updatedState.data
         },
+
+        setRemoveContact: (state: ContactStateType, action) => {
+            const prevState = current(state);
+
+            const updatedState = {
+                data: prevState.data.filter((contact) => contact.id !== action.payload)
+            }
+
+            state.data = updatedState.data
+        },
     }
 })
 
-export const { setContact, setChangeValueOfContact, setAddNewContact } = contactReducer.actions;
+export const { setContact, setChangeValueOfContact, setAddNewContact, setRemoveContact } = contactReducer.actions;
 export default contactReducer.reducer;

@@ -1,3 +1,5 @@
+@import '../global/colors.scss';
+
 .contact{
   &__content{
     margin-top: 50px;
@@ -17,9 +19,12 @@
 
 
 .dashboard{
+ 
   &__contact{
+    
     &__main{
       margin-top: 20px;
+      
 
       &__button{
         width: 200px;
@@ -30,11 +35,24 @@
         display: flex;
         flex-wrap: wrap;
         gap: 30px;
+        
       }
 
       &__inputs{
         width: 250px;
+        border: 1px solid $activeGreen;
+        padding: 10px;
+        border-radius: 5px;
       }
+    }
+  }
+
+  &__head__flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span{
+      cursor: pointer;
     }
   }
 }

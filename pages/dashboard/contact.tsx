@@ -7,7 +7,7 @@ import { useSave } from "../../hooks/DashboardHooks/useSave";
 import { useContact } from "../../hooks/DashboardHooks/useContact";
 
 function Contact() {
-  const { addNewContact, handleChange } = useContact();
+  const { addNewContact, handleChange, handleRemove } = useContact();
   const contactState = useTypedSelector((state) => state.contact.data);
   const { handleSaveButton, saved } = useSave();
 
@@ -31,6 +31,18 @@ function Contact() {
                 key={contact.id}
                 className={classes.dashboard__contact__main__inputs}
               >
+                <Heading type="small">
+                  <div className={classes.dashboard__head__flex}>
+                    <p>{contact.text}</p>
+                    <span
+                      onClick={() => {
+                        handleRemove(contact.id);
+                      }}
+                    >
+                      🗑️
+                    </span>
+                  </div>
+                </Heading>
                 <Input
                   name="icon"
                   onChange={(e) => {
@@ -66,13 +78,15 @@ function Contact() {
           })}
         </div>
         <br />
-        <Button
-          text={saved ? "Saved" : "Save contact data"}
-          color={saved ? ButtonColorEnum.Success : ButtonColorEnum.Black}
-          onClick={() => {
-            handleSaveButton("contact/", contactState);
-          }}
-        />
+        {contactState.length !== 0 && (
+          <Button
+            text={saved ? "Saved" : "Save contact data"}
+            color={saved ? ButtonColorEnum.Success : ButtonColorEnum.Black}
+            onClick={() => {
+              handleSaveButton("contact/", contactState);
+            }}
+          />
+        )}
       </div>
     </div>
   );
