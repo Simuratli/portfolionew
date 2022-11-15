@@ -3,7 +3,12 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['images.unsplash.com', 'picsum.photos', 'www.billboard.com'],
+    domains: [
+      'images.unsplash.com',
+      'picsum.photos',
+      'www.billboard.com',
+      'charts-static.billboard.com',
+    ],
   },
 };
 

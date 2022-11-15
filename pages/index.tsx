@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "../styles/Home.module.scss";
-import { Heading, GrayBox, Avatar } from "../components";
+import { Heading, GrayBox, Avatar, GrayBoxLoader } from "../components";
 import { Resume, Experience, More, Contact } from "../containers";
 import { routes } from "../utils/routes.util";
 import { useAboutMe } from "../hooks/DashboardHooks/useAboutMe";
@@ -18,7 +18,7 @@ export default function Home() {
     <div className={styles.container}>
       <Avatar image={Me} />
       <Heading type="big">{aboutState.name}</Heading>
-      <GrayBox>{aboutState.aboutMe}</GrayBox>
+      {aboutState.aboutMe ? <GrayBox>{aboutState.aboutMe}</GrayBox> : <GrayBoxLoader />}
       <Resume />
       <Experience />
       <More
