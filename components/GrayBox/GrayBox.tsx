@@ -6,7 +6,7 @@ function GrayBox({ children }: GrayBoxPropTypes) {
   return (
     <div
       className={classes.graybox}
-      dangerouslySetInnerHTML={{ __html: children }}
+      dangerouslySetInnerHTML={{ __html: typeof children === 'string' ? children : 'Error' }}
     />
   );
 }
