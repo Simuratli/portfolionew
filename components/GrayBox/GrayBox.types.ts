@@ -1,3 +1,3 @@
 export interface GrayBoxPropTypes {
-  children: string;
+  children: React.ReactNode;
 }

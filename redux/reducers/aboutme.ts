@@ -7,7 +7,7 @@ export interface audioReducerType {
   workPlace: string;
   title: string;
   currentlyLearning: string;
-  aboutMe: string | null;
+  aboutMe: string | number | readonly string[] | undefined;
 }
 
 const aboutMeReducer = createSlice({
@@ -20,7 +20,7 @@ const aboutMeReducer = createSlice({
     workPlace: "UDS Systems",
     title: "Front end developer",
     currentlyLearning: "CI/CD",
-    aboutMe: null,
+    aboutMe: undefined,
   } as audioReducerType,
 
   reducers: {
