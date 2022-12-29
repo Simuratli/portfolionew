@@ -20,7 +20,7 @@ export default function Home() {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="keywords" content="titla, meta, nextjs" />
-        <meta name="author" content="Syamlal CM" />
+        <meta name="author" content="Simuratli Eljan" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Simuratli</title>
       </Head>
