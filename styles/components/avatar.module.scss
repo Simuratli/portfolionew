@@ -1,6 +1,6 @@
 @import "../global/colors.scss";
 
-.avatar{
+.avatar {
   width: 244px;
   height: 244px;
   overflow: hidden;
@@ -10,8 +10,8 @@
   margin-bottom: 55px;
 }
 
-@media (max-width: 768px){
-  .avatar{
+@media (max-width: 768px) {
+  .avatar {
     width: 100px;
     height: 100px;
     overflow: hidden;
@@ -20,5 +20,4 @@
     background-color: $white;
     margin-bottom: 55px;
   }
-  
 }

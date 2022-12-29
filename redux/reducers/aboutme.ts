@@ -1,5 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
-
+import { createSlice } from "@reduxjs/toolkit";
 
 export interface audioReducerType {
   name: string;
@@ -12,53 +11,61 @@ export interface audioReducerType {
 }
 
 const aboutMeReducer = createSlice({
-  name: 'aboutme',
+  name: "aboutme",
 
   initialState: {
-    name: 'Eljan Simuratli',
+    name: "Eljan Simuratli",
     age: 24,
-    experience: '4 years',
-    workPlace: 'UDS Systems',
-    title: 'Front end developer',
-    currentlyLearning: 'CI/CD',
+    experience: "4 years",
+    workPlace: "UDS Systems",
+    title: "Front end developer",
+    currentlyLearning: "CI/CD",
     aboutMe: null,
   } as audioReducerType,
 
   reducers: {
     setName: (state: audioReducerType, action) => {
-      state.name = action.payload
+      state.name = action.payload;
     },
     setAge: (state: audioReducerType, action) => {
-      state.age = action.payload
+      state.age = action.payload;
     },
     setExperience: (state: audioReducerType, action) => {
-      state.experience = action.payload
+      state.experience = action.payload;
     },
     setWorkPlace: (state: audioReducerType, action) => {
-      state.workPlace = action.payload
+      state.workPlace = action.payload;
     },
     setTitle: (state: audioReducerType, action) => {
-      state.title = action.payload
+      state.title = action.payload;
     },
     setCurrentlyLearning: (state: audioReducerType, action) => {
-      state.currentlyLearning = action.payload
+      state.currentlyLearning = action.payload;
     },
     setAboutMe: (state: audioReducerType, action) => {
-      state.aboutMe = action.payload
+      state.aboutMe = action.payload;
     },
     setAll: (state: audioReducerType, action) => {
-      state.aboutMe = action.payload.aboutMe
-      state.currentlyLearning = action.payload.currentlyLearning
-      state.title = action.payload.title
-      state.workPlace = action.payload.workPlace
-      state.experience = action.payload.experience
-      state.age = action.payload.age
-      state.name = action.payload.name
+      state.aboutMe = action.payload.aboutMe;
+      state.currentlyLearning = action.payload.currentlyLearning;
+      state.title = action.payload.title;
+      state.workPlace = action.payload.workPlace;
+      state.experience = action.payload.experience;
+      state.age = action.payload.age;
+      state.name = action.payload.name;
     },
-  }
+  },
+});
 
-})
+export const {
+  setAboutMe,
+  setAge,
+  setCurrentlyLearning,
+  setExperience,
+  setName,
+  setTitle,
+  setWorkPlace,
+  setAll,
+} = aboutMeReducer.actions;
 
-export const { setAboutMe, setAge, setCurrentlyLearning, setExperience, setName, setTitle, setWorkPlace, setAll } = aboutMeReducer.actions;
-
-export default aboutMeReducer.reducer
+export default aboutMeReducer.reducer;

@@ -2,7 +2,7 @@
   --primary: #f40082;
   --secondary: #ffd200;
 
-  border-top: 1px solid #F0F0F0;
+  border-top: 1px solid #f0f0f0;
   width: 100%;
   position: fixed;
   left: 0;
@@ -11,21 +11,21 @@
   background-color: white;
   z-index: 1000;
 
-  &__content{
+  &__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 60%;
-    margin:0 auto;
+    margin: 0 auto;
     gap: 20px;
   }
 
-  &__progress{
+  &__progress {
     display: flex;
     flex-direction: column;
   }
 
-  &__time{
+  &__time {
     display: flex;
     justify-content: space-between;
   }
@@ -41,11 +41,9 @@
   cursor: pointer;
 }
 
-
 .forwardBackward:hover {
   color: var(--primary);
 }
-
 
 .playPause {
   border: none;
@@ -53,7 +51,6 @@
   outline: none;
   cursor: pointer;
 }
-
 
 .playPause svg {
   border: none;
@@ -63,21 +60,17 @@
   font-size: 32px;
 }
 
-
 .currentTime,
 .duration {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #37352F;
+  color: #37352f;
 }
 
-
-
-
 .progressBar {
-  --bar-bg: #F9F9FA;
+  --bar-bg: #f9f9fa;
   --seek-before-width: 0;
   --seek-before-color: black;
   --knobby: black;
@@ -85,7 +78,7 @@
   --rounded: 10px;
 
   appearance: none;
-  background: var(--bar-bg);;
+  background: var(--bar-bg);
   border-radius: 10px;
   position: relative;
   width: 100%;
@@ -94,11 +87,9 @@
   cursor: pointer;
 }
 
-
-
 /* progress bar - safari */
 .progressBar::-webkit-slider-runnable-track {
-  background: var(--bar-bg);;
+  background: var(--bar-bg);
   border-radius: var(--rounded);
   position: relative;
   width: 100%;
@@ -108,7 +99,7 @@
 
 /* progress bar - firefox */
 .progressBar::-moz-range-track {
-  background: var(--bar-bg);;
+  background: var(--bar-bg);
   border-radius: var(--rounded);
   position: relative;
   width: 100%;
@@ -122,12 +113,12 @@
 
 /* progress bar - chrome and safari */
 .progressBar::before {
-  content: '';
+  content: "";
   height: 11px;
   width: var(--seek-before-width);
   background-color: var(--seek-before-color);
-  border-top-left-radius: var(--rounded);;
-  border-bottom-left-radius: var(--rounded);;
+  border-top-left-radius: var(--rounded);
+  border-bottom-left-radius: var(--rounded);
   position: absolute;
   top: 0;
   left: 0;
@@ -138,8 +129,8 @@
 /* progress bar - firefox */
 .progressBar::-moz-range-progress {
   background-color: var(--seek-before-color);
-  border-top-left-radius: var(--rounded);;
-  border-bottom-left-radius: var(--rounded);;
+  border-top-left-radius: var(--rounded);
+  border-bottom-left-radius: var(--rounded);
   height: 11px;
 }
 
@@ -183,17 +174,16 @@
   background: var(--selectedKnobby);
 }
 
-
-.progressBarWrapper{
+.progressBarWrapper {
   position: relative;
   width: 100%;
 }
 
-.audioPlayer__main{
+.audioPlayer__main {
   flex: 2;
 }
 
-.chapter{
+.chapter {
   display: block;
   height: 11px;
   background-color: var(--primary);
@@ -205,27 +195,23 @@
   z-index: 2;
 }
 
-
-.chapter.start{
+.chapter.start {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 
-.chapter.end{
+.chapter.end {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
-
-
-.audio__control{
+.audio__control {
   gap: 20px;
   // align-items: center;
 }
 
-.volumeWrapper{
+.volumeWrapper {
   position: relative;
-  
 }
 
 .volumeWrapper svg {
@@ -236,10 +222,10 @@
   font-size: 32px;
 }
 
-.volumeInput{
+.volumeInput {
   position: absolute;
   transform: rotate(-90deg);
-  background-color: #F9F9FA;
+  background-color: #f9f9fa;
   border-radius: 5px;
   height: 46px;
   display: flex;
@@ -250,16 +236,16 @@
   display: none;
 }
 
-.showVolume{
+.showVolume {
   display: flex;
 }
 
-@media (max-width: 768px){
-  .progressBarWrapper{
+@media (max-width: 768px) {
+  .progressBarWrapper {
     width: 200px;
   }
 
-  .audioPlayer__content{
+  .audioPlayer__content {
     width: 100%;
     align-items: flex-end;
     padding: 0 20px;

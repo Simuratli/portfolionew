@@ -1,25 +1,25 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from "react";
 import {
   onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
-} from 'firebase/auth'
-import { auth } from '../firebase/config'
-import { useRouter } from 'next/router'
+} from "firebase/auth";
+import { auth } from "../firebase/config";
+import { useRouter } from "next/router";
 
-const AuthContext = createContext<any>({})
+const AuthContext = createContext<any>({});
 
-export const useAuth = () => useContext(AuthContext)
+export const useAuth = () => useContext(AuthContext);
 
 export const AuthContextProvider = ({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) => {
-  const [user, setUser] = useState<any>(null)
-  const [loading, setLoading] = useState(true)
-  const router = useRouter()
+  const [user, setUser] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -27,33 +27,33 @@ export const AuthContextProvider = ({
           uid: user.uid,
           email: user.email,
           displayName: user.displayName,
-        })
+        });
       } else {
-        setUser(null)
+        setUser(null);
       }
-      setLoading(false)
-    })
+      setLoading(false);
+    });
 
-    return () => unsubscribe()
-  }, [])
+    return () => unsubscribe();
+  }, []);
 
   const signup = (email: string, password: string) => {
-    return createUserWithEmailAndPassword(auth, email, password)
-  }
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
 
   const login = (email: string, password: string) => {
-    return signInWithEmailAndPassword(auth, email, password)
-  }
+    return signInWithEmailAndPassword(auth, email, password);
+  };
 
   const logout = async () => {
-    setUser(null)
-    await signOut(auth)
-    router.push('/login')
-  }
+    setUser(null);
+    await signOut(auth);
+    router.push("/login");
+  };
 
   return (
     <AuthContext.Provider value={{ user, login, signup, logout }}>
       {loading ? null : children}
     </AuthContext.Provider>
-  )
-}
+  );
+};

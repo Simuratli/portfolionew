@@ -1,7 +1,7 @@
-@import '../global/colors.scss';
+@import "../global/colors.scss";
 
-.contact{
-  &__content{
+.contact {
+  &__content {
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
@@ -10,35 +10,30 @@
 }
 
 @media (max-width: 760px) {
-  .contact{
-    &__content{
-      gap:20px;
+  .contact {
+    &__content {
+      gap: 20px;
     }
   }
 }
 
-
-.dashboard{
- 
-  &__contact{
-    
-    &__main{
+.dashboard {
+  &__contact {
+    &__main {
       margin-top: 20px;
-      
 
-      &__button{
+      &__button {
         width: 200px;
-        margin-bottom:40px;
+        margin-bottom: 40px;
       }
 
-      &__content{
+      &__content {
         display: flex;
         flex-wrap: wrap;
         gap: 30px;
-        
       }
 
-      &__inputs{
+      &__inputs {
         width: 250px;
         border: 1px solid $activeGreen;
         padding: 10px;
@@ -47,11 +42,11 @@
     }
   }
 
-  &__head__flex{
+  &__head__flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    span{
+    span {
       cursor: pointer;
     }
   }

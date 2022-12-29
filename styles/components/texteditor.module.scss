@@ -1,8 +1,8 @@
-@import '../global/colors.scss';
-.texteditor{
-  textarea{
+@import "../global/colors.scss";
+.texteditor {
+  textarea {
     width: 100%;
-    
+
     padding: 10px;
     outline: none;
     border-radius: 5px;
@@ -10,7 +10,7 @@
     resize: vertical;
     height: 400px;
   }
-  label{
+  label {
     font-weight: bold;
     margin: 10px;
     display: block;

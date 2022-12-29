@@ -1,16 +1,16 @@
-@import '../global/colors.scss';
+@import "../global/colors.scss";
 
 .musicCard {
   height: 80px;
   display: flex;
   gap: 20px;
-  border: 1px solid #E1E1E1;
+  border: 1px solid #e1e1e1;
   cursor: pointer;
   margin: 20px 0;
   position: relative;
 
   &__icon {
-    color: #F0F0F0;
+    color: #f0f0f0;
     width: 100%;
     position: absolute;
     height: 100%;
@@ -34,12 +34,11 @@
     }
   }
 
-
   &__image {
     width: 80px;
     height: 80px;
     position: relative;
-    background-color: #E1E1E1;
+    background-color: #e1e1e1;
 
     img {
       object-fit: cover;
@@ -48,7 +47,7 @@
 
   &__content {
     display: flex;
-    color: #37352F;
+    color: #37352f;
     gap: 5px;
     justify-content: center;
     flex-direction: column;
@@ -60,11 +59,9 @@
 
   h1 {
     font-size: 22px;
-    color: #37352F;
+    color: #37352f;
   }
-
 }
-
 
 .musicCard__active__dot {
   display: block;
@@ -74,9 +71,8 @@
   border-radius: 50%;
   position: absolute;
   right: 20px;
-  top: 30px
+  top: 30px;
 }
-
 
 @media (max-width: 768px) {
   .musicCard {

@@ -1,26 +1,26 @@
-@import '../global/colors.scss';
+@import "../global/colors.scss";
 
-.musiclistdb{
+.musiclistdb {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #F0F8FF;
+  background-color: #f0f8ff;
   padding: 5px;
   border-radius: 5px;
 
-  svg{
+  svg {
     cursor: pointer;
-    color: #BA2B2B;
+    color: #ba2b2b;
   }
 }
 
-.musiclist{
+.musiclist {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 
-  &__loader{
+  &__loader {
     display: flex;
     align-items: center;
     gap: 20px;

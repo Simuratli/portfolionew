@@ -1,5 +1,5 @@
 export enum ButtonColorEnum {
   Success = "success",
-  Black = 'black',
-  Danger = "danger"
+  Black = "black",
+  Danger = "danger",
 }

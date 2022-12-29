@@ -1,6 +1,6 @@
-@import '../global/colors.scss';
+@import "../global/colors.scss";
 
-.form{
+.form {
   display: flex;
   flex-direction: column;
   min-width: 200px;
@@ -9,7 +9,4 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-
-
-  
 }

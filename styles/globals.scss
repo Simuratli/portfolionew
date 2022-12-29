@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import './global/colors.scss';
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "./global/colors.scss";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .component-container {
@@ -15,25 +15,23 @@
   top: -150px;
 }
 
-.red{
+.red {
   color: rgba(225, 70, 70, 1);
 }
 
-.italic{
+.italic {
   font-style: italic;
 }
 
-
-.without_avatar{
+.without_avatar {
   margin-top: 200px;
 }
 
-
-.noLink{
+.noLink {
   text-decoration: none !important;
 }
 
-button{
+button {
   width: 100%;
   padding: 10px;
   border: 0;
@@ -41,21 +39,21 @@ button{
   cursor: pointer;
   color: $white;
   border-radius: 5px;
-  &.danger{
+  &.danger {
     background-color: $danger;
   }
 
-  &.success{
+  &.success {
     background-color: $success;
   }
 
-  &.black{
+  &.black {
     background: $textBlack;
   }
 }
 
 @media (max-width: 768px) {
-  .without_avatar{
+  .without_avatar {
     margin-top: 150px;
   }
 }
@@ -69,5 +67,104 @@ button{
   .component-container {
     top: -102px;
   }
-  
+}
+
+.richEditor {
+  border: 3px solid black;
+  border-radius: 8px;
+  padding: 10px;
+  outline: none;
+}
+
+.richEditor__buttons {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.richEditor__button {
+  width: max-content;
+  background-color: $white;
+  color: $textBlack;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  display: grid;
+  place-content: center;
+}
+
+.ProseMirror {
+  outline: none;
+}
+
+.richEditor__button__active {
+  background-color: black;
+  color: $white;
+}
+
+.ProseMirror .is-empty:before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #ced4da;
+  pointer-events: none;
+  height: 0;
+}
+
+.ProseMirror table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  text-indent: initial;
+  border-spacing: 2px;
+}
+
+.ProseMirror table th {
+  font-weight: 700;
+  text-align: left;
+  background-color: #f1f3f5;
+}
+
+.ProseMirror table td,
+.ProseMirror table th {
+  min-width: 1em;
+  border: 2px solid #ced4da;
+  padding: 3px 5px;
+  vertical-align: top;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.floating-menu {
+  .richEditor__buttons {
+    background-color: $white;
+    display: flex;
+    flex-direction: column !important;
+    position: absolute;
+    bottom: 0;
+    flex-wrap: nowrap;
+    max-height: 200px;
+    width: 120px;
+    overflow: hidden scroll;
+    box-shadow: -1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    padding: 10px;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: rgb(0, 0, 0);
+    }
+  }
 }

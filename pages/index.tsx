@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "../styles/Home.module.scss";
+import Head from "next/head";
 import { Heading, GrayBox, Avatar, GrayBoxLoader } from "../components";
 import { Resume, Experience, More, Contact } from "../containers";
 import { routes } from "../utils/routes.util";
@@ -16,9 +17,20 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta name="keywords" content="titla, meta, nextjs" />
+        <meta name="author" content="Syamlal CM" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Simuratli</title>
+      </Head>
       <Avatar image={Me} />
       <Heading type="big">{aboutState.name}</Heading>
-      {aboutState.aboutMe ? <GrayBox>{aboutState.aboutMe}</GrayBox> : <GrayBoxLoader />}
+      {aboutState.aboutMe ? (
+        <GrayBox>{aboutState.aboutMe}</GrayBox>
+      ) : (
+        <GrayBoxLoader />
+      )}
       <Resume />
       <Experience />
       <More

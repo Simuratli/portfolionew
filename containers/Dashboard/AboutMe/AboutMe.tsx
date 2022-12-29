@@ -1,15 +1,16 @@
-import React, { useEffect } from 'react'
-import { Heading, Input, TextEditor, Button } from '../../../components';
-import { useAboutMe } from '../../../hooks/DashboardHooks/useAboutMe'
-import { useTypedSelector } from '../../../hooks/useTypedSelector'
-import { ButtonColorEnum } from '../../../utils/global.types';
+import React, { useEffect } from "react";
+import { Heading, Input, TextEditor, Button } from "../../../components";
+import { useAboutMe } from "../../../hooks/DashboardHooks/useAboutMe";
+import { useTypedSelector } from "../../../hooks/useTypedSelector";
+import { ButtonColorEnum } from "../../../utils/global.types";
 
 function AboutMe() {
-  const { handleSaveButton, handleChange, saved, getAboutMeData } = useAboutMe();
-  const aboutMeState = useTypedSelector(state => state.aboutMe);
+  const { handleSaveButton, handleChange, saved, getAboutMeData } =
+    useAboutMe();
+  const aboutMeState = useTypedSelector((state) => state.aboutMe);
   useEffect(() => {
     getAboutMeData();
-  }, [])
+  }, []);
 
   return (
     <div>
@@ -19,7 +20,7 @@ function AboutMe() {
       <br />
       <br />
       <Input
-        name='name'
+        name="name"
         placeholder="Name"
         label="Name"
         onChange={handleChange}
@@ -27,7 +28,7 @@ function AboutMe() {
         value={aboutMeState.name}
       />
       <Input
-        name='age'
+        name="age"
         placeholder="Age"
         label="Age"
         onChange={handleChange}
@@ -35,7 +36,7 @@ function AboutMe() {
         value={aboutMeState.age}
       />
       <Input
-        name='experience'
+        name="experience"
         placeholder="Experience"
         label="Experience"
         onChange={handleChange}
@@ -43,7 +44,7 @@ function AboutMe() {
         value={aboutMeState.experience}
       />
       <Input
-        name='workPlace'
+        name="workPlace"
         placeholder="Work place"
         label="Work place"
         onChange={handleChange}
@@ -51,7 +52,7 @@ function AboutMe() {
         value={aboutMeState.workPlace}
       />
       <Input
-        name='title'
+        name="title"
         placeholder="Title"
         label="Title"
         onChange={handleChange}
@@ -59,18 +60,26 @@ function AboutMe() {
         value={aboutMeState.title}
       />
       <Input
-        name='currentlyLearning'
+        name="currentlyLearning"
         placeholder="Currently Learning"
         label="Currently Learning"
         onChange={handleChange}
         type="text"
         value={aboutMeState.currentlyLearning}
       />
-      <TextEditor name="aboutMe" value={aboutMeState.aboutMe} onChange={handleChange} />
+      <TextEditor
+        name="aboutMe"
+        value={aboutMeState.aboutMe}
+        onChange={handleChange}
+      />
       <br />
-      <Button color={saved ? ButtonColorEnum.Success : ButtonColorEnum.Black} onClick={handleSaveButton} text={saved ? "Saved" : 'Save About Me'} />
+      <Button
+        color={saved ? ButtonColorEnum.Success : ButtonColorEnum.Black}
+        onClick={handleSaveButton}
+        text={saved ? "Saved" : "Save About Me"}
+      />
     </div>
-  )
+  );
 }
 
-export default AboutMe
+export default AboutMe;
